@@ -118,8 +118,8 @@ def compute_cost(a3, Y):
     """
     m = Y.shape[1]
     
-    logprobs = np.multiply(-np.log(a3),Y) + np.multiply(-np.log(1 - a3), 1 - Y)
-    cost = 1./m * np.nansum(logprobs)
+    logprobs =-( np.multiply(np.log(a3),Y) + np.multiply(np.log(1 - a3), 1 - Y))
+    cost = 1/m * np.nansum(logprobs)
     
     return cost
 
@@ -191,7 +191,8 @@ def load_2D_dataset(is_plot=True):
     test_X = data['Xval'].T
     test_Y = data['yval'].T
     if is_plot:
-        plt.scatter(train_X[0, :], train_X[1, :], c=train_Y, s=40, cmap=plt.cm.Spectral);
+        plt.scatter(train_X[0, :], train_X[1, :], c=np.squeeze(train_Y), s=40, cmap=plt.cm.Spectral);
+        plt.show()
     
     return train_X, train_Y, test_X, test_Y
 
@@ -239,7 +240,7 @@ def plot_decision_boundary(model, X, y):
     plt.contourf(xx, yy, Z, cmap=plt.cm.Spectral)
     plt.ylabel('x2')
     plt.xlabel('x1')
-    plt.scatter(X[0, :], X[1, :], c=y, cmap=plt.cm.Spectral)
+    plt.scatter(X[0, :], X[1, :], c=np.squeeze(y), cmap=plt.cm.Spectral)
     plt.show()
  
 def predict_dec(parameters, X):
