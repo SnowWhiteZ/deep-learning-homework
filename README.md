@@ -12,3 +12,8 @@ from Andrew
 
 # 2-1 L2正则、dropout、梯度校验
 手动实现了L2正则项，dropout在神经网络中存在与不存在的差别，都未使用TensorFlow等框架，原生23333
+
+# 2-2 梯度下降，带动量的梯度下降，adam
+梯度下降：Accuracy：0.796666
+带动量的：Accuracy：0.796666
+Adam：Accuracy:0.94
