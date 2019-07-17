@@ -17,3 +17,6 @@ from Andrew
 梯度下降：Accuracy：0.796666
 带动量的：Accuracy：0.796666
 Adam：Accuracy:0.94
+
+# 2-3 使用TensorFlow实现了手势识别分类
+数据集为别人拍摄的五个手指，所以只能做到从1-5的分类
